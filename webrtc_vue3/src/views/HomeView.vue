@@ -84,9 +84,11 @@ let audioContext = "";
 onMounted(() => {
   if(!route.query.roomid){
     ElMessage.error("url参数roomid获取失败，请在url上加上roomid参数")
+    return
   }
   if(!route.query.userName){
     ElMessage.error("url参数userName获取失败，请在url上加上userName参数")
+    return
   }
   setTimeout(() => {
     localVideo.value.srcObject = tempStream.remoteStream;
